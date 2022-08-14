@@ -6,17 +6,9 @@ pipeline {
       steps {
         sh """
         #!/bin/bash
-        cd jenkins-tutorial
+        cd jenkins-tutorial/AWS
         packer init .
         packer build -force .
-        """
-      }
-    }
-    stage('Docker - Verify Docker Image') {
-      steps {
-        sh """
-        #!/bin/bash
-        docker images
         """
       }
     }
